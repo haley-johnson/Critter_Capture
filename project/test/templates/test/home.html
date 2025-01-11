@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Home Page</title>
 </head>
 <body>
@@ -13,9 +14,75 @@
             <a href="/critters/">View Your Critter Collection</a>
         </nav>
     </header>
-    <main>
-        <h2>This is the home page with a green color scheme.</h2>
-        <p>Enjoy the fresh look of green.</p>
-    </main>
 </body>
-</html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Media Device Access</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      video, img {
+        max-width:100%;
+      }
+    </style>
+  </head>
+<body>
+    <!-- Video element with white border and centered -->
+    <video autoplay style="display: block; margin: 20px auto; border: 10px solid green; max-width: 80%; max-height: 80%; transform: scaleX(-1);"></video>
+    
+    <!-- Button to take a snapshot, styled as a round red button with no text -->
+    <button id="take-photo-button" 
+            style="display: block; margin: 20px auto; width: 70px; height: 70px; border-radius: 50%; background-color: #FFCCCB; border: 2px solid red; cursor: pointer; font-size: 35px;">
+            <i class="fa-solid fa-camera" style="color:red;"></i>
+    </button>
+  
+    <script>
+      (function() {
+        'use strict';
+        var video = document.querySelector('video')
+          , canvas;
+    
+        /**
+         *  Generates a still frame image from the stream in the <video>
+         *  and mirrors the captured image.
+         *  Appends the image to the <body>
+         */
+        function takeSnapshot() {
+          var img = document.querySelector('img') || document.createElement('img');
+          var context;
+          var width = video.offsetWidth
+            , height = video.offsetHeight;
+    
+          canvas = canvas || document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+    
+          context = canvas.getContext('2d');
+          
+          // Mirror the image by applying a horizontal flip
+          context.scale(-1, 1); // Flip horizontally
+          context.drawImage(video, -width, 0, width, height); // Draw the flipped image
+    
+          img.src = canvas.toDataURL('image/png');
+          // document.body.appendChild(img); // Display the captured (mirrored) image below the button
+        }
+    
+        // Use MediaDevices API to access the camera
+        if (navigator.mediaDevices) {
+          // Access the web cam
+          navigator.mediaDevices.getUserMedia({video: true})
+          .then(function(stream) {
+            video.srcObject = stream;
+          })
+          .catch(function(error) {
+            document.body.textContent = 'Could not access the camera. Error: ' + error.name;
+          });
+        }
+  
+        // Event listener for the button to take a snapshot
+        document.getElementById('take-photo-button').addEventListener('click', takeSnapshot);
+  
+      })();
+    </script>
+  </body>
+  </html>
+  
