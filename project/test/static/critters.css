@@ -1,10 +1,21 @@
 .container{
-    display: grid;
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
 }
 
 .grid-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.grid-item img {
+    max-width: 200px; 
+    border: 1px solid #ccc; /* Optional border */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .legend {
