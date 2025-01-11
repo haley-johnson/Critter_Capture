@@ -1,6 +1,6 @@
 /* General page styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Century Gothic", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #e8f5e9;  /* Light green background */
@@ -15,7 +15,7 @@ header {
 }
 
 h1, h2 {
-    font: 50px Arial, sans-serif;
+    font: 50px "Century Gothic", sans-serif;
 }
 
 nav a {

@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/styles.css">
-    <title>Contact Page</title>
+    <link rel="stylesheet" href="../../static/critters.css">
+    <title>Critter Collection</title>
 </head>
 <body>
     <header>
-        <h1>Contact Us</h1>
+        <h1>Critter Collection</h1>
         <nav>
             <a href="/">Home</a>
             <a href="/critters/">Critters</a>
         </nav>
     </header>
     <main>
-        <h2>We would love to hear from you!</h2>
-        <p>Please reach out if you have any questions.</p>
+        <div class="legend">
+            <div class="legend-item" style="--color: red;">Endangered</div>
+            <div class="legend-item" style="--color: rgb(255, 191, 0);">Vulnerable</div>
+            <div class="legend-item" style="--color: rgba(0, 255, 4, 0.836);">Least Concern</div>
+        </div>
+        <!-- <div class="container">
+            <div class="grid-item">
+                <img src="{%static 'images/' %}{{ image.name}}" alt="{{ image.name }}">
+
+            </div>
+        </div> -->
     </main>
 </body>
 </html>
