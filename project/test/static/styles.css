@@ -3,6 +3,7 @@ body {
     font-family: "Century Gothic", sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('prints0.png');
     background-color: #e8f5e9;  /* Light green background */
     color: #2c6b2f;  /* Dark green text */
 }
