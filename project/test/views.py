@@ -10,7 +10,7 @@ def critters(request):
     return render(request, 'test/critters.html')
 
 def conservation(request):
-    return render(request, 'test/endangerment.html')
+    return render(request, 'test/conservation.html')
 
 def critter_collection(request):
     logs = Animal_Log.objects.all()  # Fetch all entries from the database
