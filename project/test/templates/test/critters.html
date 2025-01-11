@@ -13,6 +13,7 @@
         <nav>
             <a href="/">Home</a>
             <a href="/critters/">Critters</a>
+            <a href="/endangerment/">Conservation</a>
         </nav>
     </header>
     <main>
@@ -20,6 +21,17 @@
             <div class="legend-item" style="--color: red;">Endangered</div>
             <div class="legend-item" style="--color: rgb(255, 191, 0);">Vulnerable</div>
             <div class="legend-item" style="--color: rgba(0, 255, 4, 0.836);">Least Concern</div>
+        </div>
+
+        <!-- Container for Critter Cards -->
+        <div class="container">
+            {% for log in logs %}
+            <div class="grid-item">
+                <!-- Dynamically Fetch Images -->
+                <img src="{../../static/images}{{ log.name|lower }}.jpg" alt="{{ log.name }}">
+                <h2>{{ log.name }}</h2>
+            </div>
+            {% endfor %}
         </div>
     </main>
 </body>
