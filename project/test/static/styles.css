@@ -15,7 +15,7 @@ header {
 }
 
 h1, h2 {
-    font-size: 2em;
+    font: 50px Arial, sans-serif;
 }
 
 nav a {
