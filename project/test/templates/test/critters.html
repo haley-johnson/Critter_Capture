@@ -35,7 +35,7 @@
                 onmouseover="this.src='../../static/{{ log.name|lower }}_hover.png';"
                 onmouseout="this.src='../../static/{{ log.name|lower }}.png';">
                 <p>{{ log.name }}</p>
-                <p1>Date logged: {{ log.date|date:"M d, Y" }}</p>
+                <p1>Date logged: {{ log.date|date:"M d, Y" }}</p1>
             </div>
             {% endfor %}
             <!-- <div class="grid-item" style="background-color: rgba(0, 255, 4, 0.836);">

@@ -31,11 +31,11 @@
     text-align: center;        /* Center align text */
 }
 
-.grid-item p1 {
-    margin-top: 10px;          /* Space between image and text */
-    font-size: 20px;
+.grid-item p1 {      
+    font-size: 17px;
     color: #000;
-    text-align: center;        /* Center align text */
+    text-align: center;
+    padding: 10px;      
 }
 
 .endangered {
