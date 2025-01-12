@@ -65,7 +65,7 @@
                     urlParams.set('q', '0');  // Set 'q=0'
                     window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);  // Update the URL without reloading
                     location.reload();  // Reload the page
-                }, 500);  // 250 milliseconds = 0.25 seconds
+                }, 1000);  // 1000 milliseconds = 1 seconds
             }
         }
     
