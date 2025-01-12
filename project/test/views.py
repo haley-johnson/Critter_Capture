@@ -14,7 +14,6 @@ def home(request):
 def critters(request):
     print("HERE")
     logs = Animal_Log.objects.all()  # Fetch all entries from the database
-    print(logs)
     logs_with_api_data = []
 
     for log in logs:
