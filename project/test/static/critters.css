@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: column;  /* Change to column to stack image and text */
     align-items: center;     /* Center the items horizontally */
-    width: 220px;            /* Add width to control grid-item size */
-    padding: 10px;           /* Optional padding around each grid item */
+    width: 220px;       
+    padding: 10px;        
     border: 1px solid #ccc; 
     border-radius: 10px;
     background-color: red;

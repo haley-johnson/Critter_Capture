@@ -17,24 +17,24 @@ def critters(request):
     print(logs)
     logs_with_api_data = []
 
-    # for log in logs:
-    #     response = requests.get(
-    #         'https://api.api-ninjas.com/v1/animals',
-    #         headers={'X-Api-Key': API_KEY},
-    #         params={'name': log.name}
-    #     )
+    for log in logs:
+        response = requests.get(
+            'https://api.api-ninjas.com/v1/animals',
+            headers={'X-Api-Key': API_KEY},
+            params={'name': log.name}
+        )
 
-    #     if response.status_code == 200:
-    #         api_data = response.json()
-    #     else:
-    #         api_data = {"error": "Could not fetch data"}
+        if response.status_code == 200:
+            api_data = response.json()
+        else:
+            api_data = {"error": "Could not fetch data"}
 
-    #      # Add log and API data to the list
-    #     logs_with_api_data.append({
-    #         "log": log,
-    #         "api_data": api_data
-    #     })
-    # print(logs_with_api_data)
+         # Add log and API data to the list
+        logs_with_api_data.append({
+            "log": log,
+            "api_data": api_data
+        })
+    print(logs_with_api_data)
     
     return render(request, 'test/critters.html', {'logs': logs})
 
