@@ -5,6 +5,11 @@ from .models import Animal_Log, Animals
 import requests
 
 API_KEY = 'VSrG5uDX/jdGVlbkMmLrDA==pW0aLq36IRlIssCj' 
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+import json
+import base64
+from test.identify import identify as id
 
 # View for the home page
 def home(request):
@@ -39,3 +44,23 @@ def critters(request):
 
 def conservation(request):
     return render(request, 'test/conservation.html')
+
+@csrf_exempt
+def upload_image(request):
+    data = json.loads(request.body)
+    image_data = data.get('image_data')
+    print(type(image_data))
+
+    format, imgstr = image_data.split(';base64,')  # Split out the base64 part
+    imgdata = base64.b64decode(imgstr)  # Decode the base64 string to binary data
+
+    with open('test/static/latest.png', 'wb') as file:
+        file.write(imgdata)
+
+    print(id.identify('test/static/latest.png'))
+
+    return HttpResponse('200')
+
+def critter_collection(request):
+    logs = Animal_Log.objects.all()  # Fetch all entries from the database
+    return render(request, 'critters.html', {'logs': logs})
