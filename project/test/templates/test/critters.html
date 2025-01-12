@@ -56,5 +56,22 @@
             </div> -->
         </div>
     </main>
+    <script>
+        // Function to check if the query string contains '?q=1'
+        function checkQueryString() {
+            const urlParams = new URLSearchParams(window.location.search); // Get the query string parameters
+            if (urlParams.has('q') && urlParams.get('q') === '1') {
+                setTimeout(function() {
+                    urlParams.set('q', '0');  // Set 'q=0'
+                    window.history.replaceState({}, '', `${window.location.pathname}?${urlParams.toString()}`);  // Update the URL without reloading
+                    location.reload();  // Reload the page
+                }, 500);  // 250 milliseconds = 0.25 seconds
+            }
+        }
+    
+        // Call the function when the page loads
+        checkQueryString();
+    </script>
+    
 </body>
 </html>

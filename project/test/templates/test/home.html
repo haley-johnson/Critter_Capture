@@ -61,7 +61,7 @@
                 capturedImage = canvas.toDataURL('image/png');
 
                 fetch('upload_image/', {method:'POST',headers:{'Content-Type':'application/json'},body: JSON.stringify({ image_data: capturedImage })});
-                window.location.href = "{% url 'critters' %}";  
+                window.location.href = "{% url 'critters' %}" + "?q=1";  
             }
 
             // Use MediaDevices API to access the camera
