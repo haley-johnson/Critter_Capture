@@ -63,7 +63,7 @@ def critters(request):
         log_with_endangerment_level.append({
             'name': log.name.capitalize(),
             'date': log.date,
-            'class_name': endangerment_mapping.get(log.name.lower(), "neutral")
+            'class_name': endangerment_mapping.get(log.name.lower(), "neutral"),
         })
     #print(log_with_endangerment_level)
     
