@@ -18,9 +18,9 @@ def home(request):
 
 # View for the contact page
 def critters(request):
-    print("HERE")
-    logs = Animal_Log.objects.all()  # Fetch all entries from the database
-    logs_with_api_data = []
+    logs = Animal_Log.objects.all().order_by('-date')  # Fetch all entries from the database
+    #print(logs)
+    #logs_with_api_data = []
 
     # for log in logs:
     #     response = requests.get(
@@ -61,9 +61,11 @@ def critters(request):
     log_with_endangerment_level = []
     for log in logs:
         log_with_endangerment_level.append({
-            'name': log.name,
-            'class_name': endangerment_mapping.get(log.name, "neutral")
+            'name': log.name.capitalize(),
+            'date': log.date,
+            'class_name': endangerment_mapping.get(log.name.lower(), "neutral")
         })
+    #print(log_with_endangerment_level)
     
     return render(request, 'test/critters.html', {'logs': log_with_endangerment_level})
 

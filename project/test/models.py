@@ -7,7 +7,7 @@ class Animal_Log(models.Model):
     loc = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} {self.date}"
     
 class Animals(models.Model):
     name = models.CharField(max_length=100, primary_key=True, unique=True)
