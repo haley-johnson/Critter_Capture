@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Animal_Log(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100, primary_key=True, unique=True)
     date = models.DateField()
     loc = models.CharField(max_length=100)
 
@@ -10,7 +10,7 @@ class Animal_Log(models.Model):
         return self.name
     
 class Animals(models.Model):
-    name = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100, primary_key=True, unique=True)
     # photo = models.ImageField(upload_to='/photos')
 
     def __str__(self):
