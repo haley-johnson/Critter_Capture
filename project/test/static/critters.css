@@ -14,7 +14,6 @@
     padding: 10px;        
     border: 1px solid #ccc; 
     border-radius: 10px;
-    background-color: red;
 }
 
 .grid-item img {
@@ -30,6 +29,22 @@
     font-weight: bold;
     color: #000;
     text-align: center;        /* Center align text */
+}
+
+.endangered {
+    background-color: red;
+}
+
+.vulnerable {
+    background-color: rgb(255, 191, 0);
+}
+
+.least-concern {
+    background-color: rgba(0, 255, 4, 0.836);
+}
+
+.neutral {
+    background-color: transparent;
 }
 
 .legend {

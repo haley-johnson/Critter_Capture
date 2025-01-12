@@ -28,7 +28,7 @@
         <div class="container">
             {% load static %}
             {% for log in logs %}
-            <div class="grid-item">
+            <div class="grid-item {{ log.class_name }}">
                 <!-- Dynamically Fetch Images -->
                 <img src="{% static '' %}{{ log.name|lower }}.png" 
                 alt="{{ log.name }}"
@@ -37,7 +37,7 @@
                 <p>{{ log.name }}</p>
             </div>
             {% endfor %}
-            <div class="grid-item" style="background-color: rgba(0, 255, 4, 0.836);">
+            <!-- <div class="grid-item" style="background-color: rgba(0, 255, 4, 0.836);">
                 <img src="{% static 'deer.png' %}" alt="Deer">
                 <p>Deer</p>
             </div>
@@ -52,7 +52,7 @@
             <div class="grid-item" style="background-color: rgba(0, 255, 4, 0.836);">
                 <img src="{% static 'bird.png' %}" alt="Fox">
                 <p>Blue Jay</p>
-            </div>
+            </div> -->
         </div>
     </main>
 </body>

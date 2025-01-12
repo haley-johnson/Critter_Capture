@@ -22,26 +22,50 @@ def critters(request):
     logs = Animal_Log.objects.all()  # Fetch all entries from the database
     logs_with_api_data = []
 
+    # for log in logs:
+    #     response = requests.get(
+    #         'https://api.api-ninjas.com/v1/animals',
+    #         headers={'X-Api-Key': API_KEY},
+    #         params={'name': log.name}
+    #     )
+
+    #     if response.status_code == 200:
+    #         api_data = response.json()
+    #     else:
+    #         api_data = {"error": "Could not fetch data"}
+
+    #      # Add log and API data to the list
+    #     logs_with_api_data.append({
+    #         "log": log,
+    #         "api_data": api_data
+    #     })
+    #print(logs_with_api_data)
+
+    endangerment_mapping = {
+        "dog": "least-concern",
+        "sheep": "least-concern",
+        "fox": "vulnerable",
+        "dog": "least-concern",
+        "housecat": "least-concern",
+        "spider": "least-concern",
+        "horse": "least-concern",
+        "elephant": "endangered",
+        "squirrel": "least-concern",
+        "chicken": "least-concern",
+        "butterfly": "least-concern",
+        "boar": "least-concern",
+        "bird": "least-concern",
+        "deer": "vulnerable"
+    }
+
+    log_with_endangerment_level = []
     for log in logs:
-        response = requests.get(
-            'https://api.api-ninjas.com/v1/animals',
-            headers={'X-Api-Key': API_KEY},
-            params={'name': log.name}
-        )
-
-        if response.status_code == 200:
-            api_data = response.json()
-        else:
-            api_data = {"error": "Could not fetch data"}
-
-         # Add log and API data to the list
-        logs_with_api_data.append({
-            "log": log,
-            "api_data": api_data
+        log_with_endangerment_level.append({
+            'name': log.name,
+            'class_name': endangerment_mapping.get(log.name, "neutral")
         })
-    print(logs_with_api_data)
     
-    return render(request, 'test/critters.html', {'logs': logs})
+    return render(request, 'test/critters.html', {'logs': log_with_endangerment_level})
 
 def conservation(request):
     return render(request, 'test/conservation.html')
