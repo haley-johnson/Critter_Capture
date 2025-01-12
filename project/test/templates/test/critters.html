@@ -28,7 +28,7 @@
             {% for log in logs %}
             <div class="grid-item">
                 <!-- Dynamically Fetch Images -->
-                <img src="{../../static/images}{{ log.name|lower }}.jpg" alt="{{ log.name }}">
+                <img src="{../../static}{{ log.name|lower }}.jpg" alt="{{ log.name }}">
                 <h2>{{ log.name }}</h2>
             </div>
             {% endfor %}
