@@ -30,7 +30,10 @@
             {% for log in logs %}
             <div class="grid-item">
                 <!-- Dynamically Fetch Images -->
-                <img src="{% static '' %}{{ log.name|lower }}.png" alt="{{ log.name }}">
+                <img src="{% static '' %}{{ log.name|lower }}.png" 
+                alt="{{ log.name }}"
+                onmouseover="this.src='../../static/{{ log.name|lower }}_hover.png';"
+                onmouseout="this.src='../../static/{{ log.name|lower }}.png';">
                 <p>{{ log.name }}</p>
             </div>
             {% endfor %}
