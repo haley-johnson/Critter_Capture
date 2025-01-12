@@ -26,10 +26,11 @@
 
         <!-- Container for Critter Cards -->
         <div class="container">
+            {% load static %}
             {% for log in logs %}
             <div class="grid-item">
                 <!-- Dynamically Fetch Images -->
-                <img src="{../../static}{{ log.name|lower }}.png" alt="{{ log.name }}">
+                <img src="{% static '' %}{{ log.name|lower }}.png" alt="{{ log.name }}">
                 <h2>{{ log.name }}</h2>
             </div>
             {% endfor %}
