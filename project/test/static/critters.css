@@ -41,3 +41,8 @@
     border: 1px solid #000; /* Optional border */
     background-color: var(--color); /* Apply the color passed through inline styles */
 }
+
+.info {
+    display: flex;
+    background-color: #ffffff
+}
