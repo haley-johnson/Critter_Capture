@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="../../static/styles.css">
     <link rel="stylesheet" href="../../static/critters.css">
     <title>Critter Collection</title>
@@ -28,7 +29,7 @@
             {% for log in logs %}
             <div class="grid-item">
                 <!-- Dynamically Fetch Images -->
-                <img src="{../../static/images}{{ log.name|lower }}.jpg" alt="{{ log.name }}">
+                <img src="{../../static}{{ log.name|lower }}.png" alt="{{ log.name }}">
                 <h2>{{ log.name }}</h2>
             </div>
             {% endfor %}
