@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Animal_Log, Animals
 import requests
-from datetime import date
+from datetime import datetime
 
 API_KEY = 'VSrG5uDX/jdGVlbkMmLrDA==pW0aLq36IRlIssCj' 
 from django.views.decorators.csrf import csrf_exempt
@@ -86,7 +86,7 @@ def upload_image(request):
 
     print(id.identify('test/static/latest.png'))
 
-    Animal_Log.objects.create(name=id.identify('test/static/latest.png'), date=date.today(), loc='toronto')
+    Animal_Log.objects.create(name=id.identify('test/static/latest.png'), date=datetime.now(), loc='toronto')
     return HttpResponse('200')
 
 def critter_collection(request):
