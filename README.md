@@ -2,7 +2,7 @@
 1) pip install tensorflow==2.9.1
 2) pip install requests
 3) pip install django
-4) cd Deltahacks2025/project
+4) cd Critter_Capture/project
 5) python manage.py runserver
    
 Then go to:
