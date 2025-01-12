@@ -8,14 +8,28 @@
 
 .grid-item{
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;  /* Change to column to stack image and text */
+    align-items: center;     /* Center the items horizontally */
+    width: 220px;            /* Add width to control grid-item size */
+    padding: 10px;           /* Optional padding around each grid item */
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    background-color: red;
 }
 
 .grid-item img {
     max-width: 200px; 
     border: 1px solid #ccc; /* Optional border */
     border-radius: 5px; /* Rounded corners */
+    background-color: white;
+}
+
+.grid-item p {
+    margin-top: 10px;          /* Space between image and text */
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;        /* Center align text */
 }
 
 .legend {
@@ -24,6 +38,8 @@
     gap: 15px;
     font-family: "Century Gothic", sans-serif;
     margin: 10px;
+    padding: 10px;
+    background-color: #e8f5e9;
 }
 
 .legend-item {
